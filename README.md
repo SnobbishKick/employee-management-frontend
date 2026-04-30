@@ -1,16 +1,51 @@
-# React + Vite
+# Employee Management System — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive Employee Management System built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- View, add, edit, and delete employees
+- Admin dashboard with live stats (total, active, inactive)
+- Dark / Light mode toggle
+- Responsive sidebar navigation
+- Status badges and zebra-striped table
+- Connects to a REST API backend
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18
+- Vite
+- Tailwind CSS v3
+- Axios
+- React Router DOM
+- Lucide React (icons)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+- Node.js v18+
+
+### Installation
+
+```bash
+git clone https://github.com/SnobbishKick/employee-management-frontend.git
+cd employee-management-frontend
+npm install
+npm run dev
+```
+
+Make sure the backend server is running on `http://localhost:5000` before starting the frontend.
+
+## Pages
+
+| Page | Route | Description |
+|------|-------|-------------|
+| Employee List | `/` | View all employees with edit and delete |
+| Add Employee | `/add` | Form to create a new employee |
+| Edit Employee | `/edit/:id` | Pre-populated form to update employee |
+| Dashboard | `/dashboard` | Stats overview cards |
+
+## Backend
+
+This project requires the backend API to be running:
+[employee-management-backend](https://github.com/SnobbishKick/employee-management-backend)
