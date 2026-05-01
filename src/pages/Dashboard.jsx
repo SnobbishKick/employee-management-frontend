@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../utils/axios';
 import { Users, UserCheck, UserX } from 'lucide-react';
 
 function Dashboard() {
@@ -8,7 +8,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/employees')
+        const res = await api.get('/employees')
         const employees = res.data;
         setStats({
           total: employees.length,

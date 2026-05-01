@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../utils/axios";
 import { Link } from "react-router-dom";
 import { Pencil, Trash2 } from "lucide-react";
 
@@ -9,7 +9,7 @@ function EmployeeList() {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/employees");
+        const res = await api.get("/employees");
         setEmployees(res.data);
       } catch (err) {
         console.error(err);
@@ -21,7 +21,7 @@ function EmployeeList() {
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this employee?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/employees/${id}`);
+      await api.delete(`/employees/${id}`);
       setEmployees(employees.filter((e) => e.id !== id));
     } catch (err) {
       console.error(err);

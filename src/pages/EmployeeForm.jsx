@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import api from '../utils/axios'
 import { useNavigate, useParams } from 'react-router-dom'
 
 function EmployeeForm() {
@@ -11,7 +11,7 @@ function EmployeeForm() {
     if (id) {
       const fetchEmployee = async () => {
         try {
-          const res = await axios.get(`http://localhost:5000/api/employees/${id}`)
+          const res = await api.get(`/employees/${id}`)
           const { name, email, role, status } = res.data
           setForm({ name, email, role, status })
         } catch (err) {
@@ -30,9 +30,9 @@ function EmployeeForm() {
     e.preventDefault()
     try {
       if (id) {
-        await axios.put(`http://localhost:5000/api/employees/${id}`, form)
+        await api.put(`/employees/${id}`, form)
       } else {
-        await axios.post('http://localhost:5000/api/employees', form)
+        await api.post('/employees', form)
       }
       navigate('/')
     } catch (err) {
