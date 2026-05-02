@@ -90,7 +90,7 @@ function EmployeeList() {
                   </Link>
                   <button
                     onClick={() => handleDelete(emp.id)}
-                    className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 transition-colors"
+                    className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 pl-1 transition-colors"
                   >
                     <Trash2 size={16} />
                   </button>
