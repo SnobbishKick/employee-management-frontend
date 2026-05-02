@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 
+
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -31,7 +32,7 @@ function App() {
             <ProtectedRoute>
               <div className="flex h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
                 <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
-                <main className="flex-1 overflow-y-auto p-6">
+                <main className="flex-1 overflow-y-auto p-6 pt-16 lg:pt-6">
                   <Routes>
                     <Route path="/" element={<EmployeeList />} />
                     <Route path="/add" element={<EmployeeForm />} />

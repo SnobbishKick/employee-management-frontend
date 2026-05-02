@@ -30,7 +30,7 @@ function EmployeeList() {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-center mb-6 pt-8 lg:pt-0">
         <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
           Employees
         </h1>
@@ -42,7 +42,8 @@ function EmployeeList() {
         </Link>
       </div>
 
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-x-auto">
+        {" "}
         <table className="w-full text-sm">
           <thead className="bg-indigo-50 dark:bg-gray-700 text-indigo-700 dark:text-indigo-300 uppercase text-xs tracking-wider">
             <tr>
